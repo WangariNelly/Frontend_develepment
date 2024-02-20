@@ -10,76 +10,88 @@
     border: 3px solid lightgray;
     border-radius: 5px;
     box-shadow: 1rem 0.1rem 0.7rem 0.1rem rgba(124, 122, 122, 0.25);
-    
+    width: 800px;
 }
 body{
+    display: flex;
+    flex-direction: column;
     font-family: 'Karla',sans-serif;
     font-weight: 400, 700;
     background: hsl(204, 43%, 93%);
     font-size: 16px;
     padding: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
+    min-height: 100vh;
+    justify-content: center !important;
     align-items: center;
 
 }
-
-
-.container .header{
+.header{
     padding: 50px;
     font-size: large;
-    max-width: 1440px;
-    width: 100%;
 }
 
 h1{
     color: hsl(179, 62%, 43%);
+    padding-bottom: 25px;
+    opacity: 1.0
+}
+.container h2{
+    font-weight: bold;
+    color: hsl(71, 73%, 54%)
+}
+.header p{
+    font-weight: bold;
+    color: hsl(218,22%,67%);
+    line-height: 30px;
 }
 
-.attribution { 
-    font-size: 11px; text-align: center; }
-.attribution a { 
-        color: hsl(228, 45%, 44%); }
-footer{
-    display: none;
-}
+
 .grid-container{
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-gap: 0;
+    display: flex;
     color: white;
+   /* grid-template-columns: auto auto auto;
+    grid-gap: 0;
+    
     justify-content: center;
     overflow: hidden;
     max-width: 1440px;
-    width: 100%;
+    width: 100%;*/
     
 }
  /*monthly subscription section*/
 .container .price-grid{
-    padding: 5rem 5rem 5rem 15rem;
+    padding: 80px;
     background:  hsl(179, 62%, 43%);
     border-bottom-left-radius: 5px;
     color: fff;
     row-gap: none;
-    margin-left: auto;
-    position: relative;
     
+}
+
+.price-grid h3{
+    padding-bottom: 30px;
+}
+
+.price{
+    display: inline-flex;
 }
 /*why us section*/
 .container .why-grid{
     background: hsla(179, 62%, 43%, 0.7);
-    padding: 5rem 20rem 5rem 8rem;
+    padding: 60px;
     color: fff;
-    width: 100%;
-    border-bottom-right-radius: 5px;
-    flex-wrap: wrap;
-
 }
 
-.container .why-grid p{
+.why-grid h3{
+    padding-bottom: 30px;
+    padding-top: 25px;
+}
+ ul{
     font-size: 16px;
-
+    list-style-type: none;
+}
+li{
+    padding-bottom: 4px;
 }
 /*price styling-inline*/
 .price-grid .price{
@@ -106,47 +118,34 @@ footer{
     color: cyan;
 }
 
-
-h2{
-    color: hsl(71, 73%, 54%);
-}
-.description{
-    color:  hsl(218, 22%, 67%)
-}
-
-h3{
-    line-height: 5.0;
-    font-size: 18px;
+.attribution { 
+    font-size: 11px; text-align: center; }
+.attribution a { 
+        color: hsl(228, 45%, 44%); }
+footer{
+    display: none;
 }
 
-@media only screen and (max-width: 594px) {
-    body{
-        
-        display: flex;
-        width: 100%;
-        overflow: scroll;
-        flex-wrap: wrap;
+@media(min-width: 375px){
+    .why-grid, .price-grid{
+        width: 50%;
     }
 }
+@media(max-width: 1440px){
     .container{
+        width: 90%;
+        margin-top: 40px;
+    }
+    .grid-container{
+        display: flex;
         flex-direction: column;
-        grid-template-columns: auto auto;
-
+        column-gap: none;
     }
-    .container .header{
-        grid-column: 1 \span 3;
-        padding: 1rem 2rem;
-        justify-content: center;
+    .header{
+        padding-right: 25px;
     }
-
-    .container .price-grid{
-        padding: 75rem 2rem
-    }
-    .container .why-grid{
-        padding: 75rem 2rem
-    }
-
-    .container .why-grid p{
-        line-height: 4;
+    .why-grid, .price-grid{
+        width: 100%;
     }
 }
+
