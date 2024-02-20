@@ -4,30 +4,33 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    line-height: 1.8;
 }
-
+/* div-container holding the body contents*/
+.container{
+    border: 3px solid lightgray;
+    border-radius: 5px;
+    box-shadow: 1rem 0.1rem 0.7rem 0.1rem rgba(124, 122, 122, 0.25);
+    
+}
 body{
     font-family: 'Karla',sans-serif;
     font-weight: 400, 700;
     background: hsl(204, 43%, 93%);
     font-size: 16px;
-    width: 100%;
+    padding: 0;
     height: 100vh;
-    padding: 5rem 2rem;
-    align-items: center;
-    justify-content: center;
     display: flex;
-    align-items:center;
+    justify-content: center;
+    align-items: center;
+
 }
 
-.container{
-    border: 3px solid lightgray;
-    border-radius: 5px;
-    box-shadow: 1rem 0.1rem 0.7rem 0.1rem rgba(124, 122, 122, 0.25)
-}
-.top-part{
-    padding: 30px;
+
+.container .header{
+    padding: 50px;
+    font-size: large;
+    max-width: 1440px;
+    width: 100%;
 }
 
 h1{
@@ -46,9 +49,13 @@ footer{
     grid-template-columns: auto auto auto;
     grid-gap: 0;
     color: white;
+    justify-content: center;
+    overflow: hidden;
+    max-width: 1440px;
+    width: 100%;
     
 }
-/* /*monthly subscription section*/
+ /*monthly subscription section*/
 .container .price-grid{
     padding: 5rem 5rem 5rem 15rem;
     background:  hsl(179, 62%, 43%);
@@ -66,8 +73,10 @@ footer{
     color: fff;
     width: 100%;
     border-bottom-right-radius: 5px;
+    flex-wrap: wrap;
 
 }
+
 .container .why-grid p{
     font-size: 16px;
 
@@ -81,10 +90,10 @@ footer{
     
 .button{
     background-color: hsl(71, 73%, 54%);
-    display: block;
+    display: inline-block;
     margin: 40px auto;
     width: 100%;
-    padding: 10px;
+    padding: 0.8rem 2rem;
     font-size: 16px;
     font-weight: 800;
     border: 3px solid  hsl(71, 73%, 54%);
@@ -103,4 +112,41 @@ h2{
 }
 .description{
     color:  hsl(218, 22%, 67%)
+}
+
+h3{
+    line-height: 5.0;
+    font-size: 18px;
+}
+
+@media only screen and (max-width: 594px) {
+    body{
+        
+        display: flex;
+        width: 100%;
+        overflow: scroll;
+        flex-wrap: wrap;
+    }
+}
+    .container{
+        flex-direction: column;
+        grid-template-columns: auto auto;
+
+    }
+    .container .header{
+        grid-column: 1 \span 3;
+        padding: 1rem 2rem;
+        justify-content: center;
+    }
+
+    .container .price-grid{
+        padding: 75rem 2rem
+    }
+    .container .why-grid{
+        padding: 75rem 2rem
+    }
+
+    .container .why-grid p{
+        line-height: 4;
+    }
 }
